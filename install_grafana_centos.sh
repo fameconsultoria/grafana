@@ -7,28 +7,7 @@
 yum -y install fontconfig
 yum -y install freetype*
 yum -y install urw-fonts
-
-## Instalação do repositorio
-
-cat <<EOF > /etc/yum.repos.d/grafana.repo
-
-[grafana]
-name=grafana
-baseurl=https://packagecloud.io/grafana/stable/el/7/\$basearch
-repo_gpgcheck=1
-enabled=1
-gpgcheck=1
-gpgkey=https://packagecloud.io/gpg.key https://grafanarel.s3.amazonaws.com/RPM-GPG-KEY-grafana
-sslverify=1
-sslcacert=/etc/pki/tls/certs/ca-bundle.crt
-
-EOF
-
-
-## Instalar grafana
-
-yum -y install grafana
-
+yum -y install https://dl.grafana.com/oss/release/grafana-6.7.2-1.x86_64.rpm
 
 
 ## Ativando o serviço
